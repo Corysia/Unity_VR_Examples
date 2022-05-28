@@ -4,6 +4,9 @@
   - [Description](#description)
   - [Concept](#concept)
     - [Not Yet Supported](#not-yet-supported)
+  - [Building](#building)
+    - [Windows](#windows)
+    - [Mac](#mac)
 
 ## Description
 
@@ -21,3 +24,13 @@ If VR is detected, it should enable the VR camera and disable the desktop camera
 ### Not Yet Supported
 
 When a VR headset is connected, the application should disable the regular camera and enable the VR camera.
+
+## Building
+
+### Windows
+
+Normal Build & Run should be fine for both Desktop and Android
+
+### Mac
+
+To make a native Mac app, disable OpenXR in the Project Settings under XR Management.

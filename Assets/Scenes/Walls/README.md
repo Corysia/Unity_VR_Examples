@@ -1,5 +1,11 @@
 # Walls
 
+- [Walls](#walls)
+  - [Description](#description)
+  - [Concept](#concept)
+    - [Notes](#notes)
+      - [Character Controller](#character-controller)
+
 ## Description
 
 Prevent a player from "cheating" by walking through walls.
