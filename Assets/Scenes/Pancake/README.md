@@ -1,10 +1,15 @@
 # Pancake
 
+- [Pancake](#pancake)
+  - [Description](#description)
+  - [Concept](#concept)
+    - [Not Yet Supported](#not-yet-supported)
+
 ## Description
 
 A pancake is a flat cake with a thick, usually solid, bottom.
 The bottom of a pancake is called a *flap*.
- 
+
 *Pancake Mode* is  a term used to describe a VR game that is played in regular Desktop mode.
 A few notable games support this, such as [The Forest](https://endnightgames.com/) and [Elite: Dangerous](https://www.elitedangerous.com/)
 
