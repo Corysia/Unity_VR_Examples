@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Walls/Walls.unity
     guid: bea32a35b389a304f88b467bdb5882b0
+  - enabled: 1
+    path: Assets/Scenes/Pancake/Pancake.unity
+    guid: 89e28c7cbbaec430fad34ff8cb75d59b
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 17682881bf2c11849894a99079af2dee,
       type: 2}
