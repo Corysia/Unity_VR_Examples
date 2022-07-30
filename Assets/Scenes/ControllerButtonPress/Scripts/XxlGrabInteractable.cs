@@ -1,5 +1,6 @@
 using UnityEngine.XR.Interaction.Toolkit;
 
+// @author Jattier (jattier 'at' hotmail.com)
 namespace Scenes.ControllerButtonPress.Scripts
 {
     public class XxlGrabInteractable : XRGrabInteractable
