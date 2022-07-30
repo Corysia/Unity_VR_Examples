@@ -1073,6 +1073,54 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Default",
+            "id": "c83a4308-9f86-4370-997b-625488d18efa",
+            "actions": [
+                {
+                    "name": "ColorChangeRight",
+                    "type": "Button",
+                    "id": "c8290dcc-96fa-44e2-ad16-a4e2744857c1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ColorChangeLeft",
+                    "type": "Button",
+                    "id": "cea860dd-058e-4eac-82d6-9e952366ff71",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "02afb3ae-c206-4830-821a-3a5dd3908604",
+                    "path": "<XRController>{RightHand}/primary",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ColorChangeRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "18271226-ed93-4e09-b764-a40bf9f335bf",
+                    "path": "<XRController>{LeftHand}/primary",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ColorChangeLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

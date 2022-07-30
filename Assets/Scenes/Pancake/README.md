@@ -19,7 +19,7 @@ A few notable games support this, such as [The Forest](https://endnightgames.com
 ## Concept
 
 When the application starts, it should detect whether or not a VR headset is connected.  If not, the application should disable the VR camera and enable the desktop camera.
-If VR is detected, it should enable the VR camera and disable the desktop camera.
+If VR is detected, it should enable the VR camera and disable the desktop camera.  The Unity provided `SimpleCameraController` script is attached to the `DesktopCamera` to demonstrate how you might use a 1st Person Controller in this case.
 
 ### Not Yet Supported
 

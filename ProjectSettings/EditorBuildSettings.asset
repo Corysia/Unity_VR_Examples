@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Walls/Walls.unity
-    guid: bea32a35b389a304f88b467bdb5882b0
+    path: Assets/Scenes/ControllerButtonPress/ButtonPress.unity
+    guid: 44bc22fa7223c2c4ab060054afaaabf6
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 17682881bf2c11849894a99079af2dee,
       type: 2}
