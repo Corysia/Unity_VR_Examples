@@ -18,9 +18,6 @@ namespace Scenes.ControllerButtonPress.Scripts
         {
             _grabInteractable = GetComponent<XxlGrabInteractable>();
             _inputActionMap = inputActions.FindActionMap("Default");
-            _colorButton = _inputActionMap.FindAction("ColorChangeRight");
-            _colorButton.performed += ColorChange;
-            _colorButton.Enable();
         }
 
         private void Update()
@@ -43,7 +40,7 @@ namespace Scenes.ControllerButtonPress.Scripts
                 }
                 if (_colorButton != null)
                 {
-                    _colorButton.performed += ColorChange;
+                    _colorButton.performed += OnColorChange;
                     Debug.Log("Delegate Assigned");
                     _colorButton.Enable();
                 }
@@ -54,20 +51,21 @@ namespace Scenes.ControllerButtonPress.Scripts
 
                 Debug.Log("Button Enabled");
             }
-            else 
+            else
             {
                 Debug.Log("Dropped");
+                GetComponent<Renderer>().material.color = Color.red;
                 if (_colorButton != null)
                 {
                     _colorButton.Disable();
                     Debug.Log("Button disabled");
-                    _colorButton.performed -= ColorChange;
+                    _colorButton.performed -= OnColorChange;
                     Debug.Log("Delegate Removed");
                 }
             }
         }
 
-        private void ColorChange(InputAction.CallbackContext ctx)
+        private void OnColorChange(InputAction.CallbackContext ctx)
         {
             Debug.Log("Color Change");
             var rend = GetComponent<Renderer>();
