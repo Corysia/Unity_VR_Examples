@@ -14,7 +14,7 @@ A collection of VR Examples
 
 ## Requirements
 
-- Unity 2021.3.3f1
+- Unity 2021.3.11f1
 
 ### Windows
 
