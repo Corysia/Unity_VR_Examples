@@ -134,7 +134,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 2022.7.30.14
+  bundleVersion: 2022.10.4.22
   preloadedAssets:
   - {fileID: 0}
   - {fileID: 0}
@@ -152,6 +152,17 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: -6951069757011970549, guid: d167b4acb9f4ed644a56d9d4b3b78cda, type: 2}
+  - {fileID: 5204365900361210596, guid: 565c444b62a5d184c921bd033ef1abc3, type: 2}
+  - {fileID: 11400000, guid: 17682881bf2c11849894a99079af2dee, type: 2}
   - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
