@@ -5,13 +5,16 @@ using UnityEngine.XR.Management;
 // Source: https://gist.github.com/demonixis/fc2f9154cd9d87e5f1c6a7a1de2dbb70
 public class DetectVR : MonoBehaviour
 {
+	#region Serialized Fields
 	[Tooltip("The XR Origin or VR Rig in the scene.")]
-	public GameObject xrOrigin;
+	[SerializeField] private GameObject xrOrigin;
 	[Tooltip("The Desktop Camera.  This could be a First Person Controller, Third Person Controller, or other camera.")]
-	public Camera cam;
+	[SerializeField] private Camera cam;
+	#endregion
 
+	#region Private Methods
 	// Start is called before the first frame update
-	public void Start()
+	private void Start()
 	{
 		var xrSettings = XRGeneralSettings.Instance;
 		if (xrSettings == null)
@@ -44,12 +47,10 @@ public class DetectVR : MonoBehaviour
 		var xrDisplay = xrLoader.GetLoadedSubsystem<XRDisplaySubsystem>();
 		Debug.Log($"XRDisplay: {xrDisplay != null}");
 
-		if (xrDisplay != null)
+		if (xrDisplay != null && xrDisplay.TryGetDisplayRefreshRate(out var refreshRate))
 		{
-			if (xrDisplay.TryGetDisplayRefreshRate(out var refreshRate))
-			{
-				Debug.Log($"Refresh Rate: {refreshRate}hz");
-			}
+			Debug.Log($"Refresh Rate: {refreshRate}hz");
+			Time.fixedDeltaTime = 1f / refreshRate;
 		}
 
 		var xrInput = xrLoader.GetLoadedSubsystem<XRInputSubsystem>();
@@ -64,4 +65,5 @@ public class DetectVR : MonoBehaviour
 		var xrMesh = xrLoader.GetLoadedSubsystem<XRMeshSubsystem>();
 		Debug.Log($"XRMesh: {xrMesh != null}");
 	}
+	#endregion
 }

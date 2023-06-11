@@ -7,16 +7,22 @@ namespace Scenes.Jump.Scripts
 
     public class Jump : MonoBehaviour
     {
+        #region Serialized Fields
         [SerializeField] private float jumpForce = 500.0f;
-        [SerializeField] public InputActionAsset inputActions;
+        [SerializeField] private InputActionAsset inputActions;
+        #endregion
+        
+        #region Member Variables
         private InputAction _jumpAction;
         private InputActionMap _inputActionMap;
         private Rigidbody _body;
+        #endregion
 
+        #region Private Methods
         private bool IsGrounded => Physics.Raycast(new Vector2(transform.position.x, transform.position.y + 2.0f),
             Vector3.down, 2.0f);
 
-        void Start()
+        private void Start()
         {
             _body = GetComponent<Rigidbody>();
             _inputActionMap = inputActions.FindActionMap("Default");
@@ -27,9 +33,9 @@ namespace Scenes.Jump.Scripts
 
         private void OnJump(InputAction.CallbackContext obj)
         {
-            if (!IsGrounded)
-                return;
+            if (!IsGrounded) return;
             _body.AddForce(Vector3.up * jumpForce);
         }
+        #endregion
     }
 }

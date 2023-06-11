@@ -6,14 +6,17 @@ namespace Scenes.Jump.Scripts
     /** Prevents the user from walking thru walls.
     Add this script to your XR Origin
     TODO: this doesn't quite work as expected when doing a Headset Reset (long press of the Oculus button)
- */
+    */
     [RequireComponent(typeof(XROrigin))]
     [RequireComponent(typeof(CapsuleCollider))]
     public class RoomscaleCC : MonoBehaviour
     {
+        #region Member Variables
         private CapsuleCollider _collider;
         private XROrigin _rig;
-    
+        #endregion
+
+        #region Private Methods
         private void Start()
         {
             _collider = GetComponent<CapsuleCollider>();
@@ -35,5 +38,6 @@ namespace Scenes.Jump.Scripts
             _collider.transform.Translate(new Vector3(0.001f, -0.001f, 0.001f));
             _collider.transform.Translate(new Vector3(-0.001f, -0.001f, -0.001f));
         }
+        #endregion
     }
 }

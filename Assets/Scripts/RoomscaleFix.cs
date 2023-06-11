@@ -9,9 +9,12 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class RoomscaleFix : MonoBehaviour
 {
+    #region Member Variables
     private CharacterController _character;
     private XROrigin _rig;
+    #endregion
     
+    #region Private Methods
     private void Start()
     {
         _character = GetComponent<CharacterController>();
@@ -33,4 +36,5 @@ public class RoomscaleFix : MonoBehaviour
         _character.Move(new Vector3(0.001f, -0.001f, 0.001f));
         _character.Move(new Vector3(-0.001f, -0.001f, -0.001f));
     }
+    #endregion
 }
