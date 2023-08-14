@@ -35,14 +35,10 @@ public class DetectVR : MonoBehaviour
 		{
 			// If the XR Loader is null, we don't have a VR camera.
 			Debug.Log($"XRLoader is null.");
-			xrOrigin.gameObject.SetActive(false);  // Disable the XR Origin.
-			cam.gameObject.SetActive(true); // Enable the Desktop Camera.
+			EnableDesktopCamera();
 			return;
 		}
 		Debug.Log($"Loaded XR Device: {xrLoader.name}");
-		// If we've reached this point, we have a VR camera.
-		xrOrigin.gameObject.SetActive(true); // Enable the XR Origin.
-		cam.gameObject.SetActive(false); // Disable the Desktop Camera.
 		
 		var xrDisplay = xrLoader.GetLoadedSubsystem<XRDisplaySubsystem>();
 		Debug.Log($"XRDisplay: {xrDisplay != null}");
@@ -51,6 +47,9 @@ public class DetectVR : MonoBehaviour
 		{
 			Debug.Log($"Refresh Rate: {refreshRate}hz");
 			Time.fixedDeltaTime = 1f / refreshRate;
+		} else {
+			EnableDesktopCamera();
+			return;
 		}
 
 		var xrInput = xrLoader.GetLoadedSubsystem<XRInputSubsystem>();
@@ -63,7 +62,29 @@ public class DetectVR : MonoBehaviour
 		}
 
 		var xrMesh = xrLoader.GetLoadedSubsystem<XRMeshSubsystem>();
-		Debug.Log($"XRMesh: {xrMesh != null}");
+		if (xrMesh == null)
+		{
+			Debug.Log($"XRMesh is null.");
+			EnableDesktopCamera();
+			return;
+		}
+		EnableVRCamera();
+	}
+
+	private void EnableDesktopCamera()
+	{
+		Debug.Log($"Enabling Desktop Camera");
+		cam.transform.position = xrOrigin.transform.position; // Set the Desktop Camera's position to the XR Origin's position.
+		xrOrigin.gameObject.SetActive(false);  // Disable the XR Origin.
+		cam.gameObject.SetActive(true); // Enable the Desktop Camera.
+	}
+
+	private void EnableVRCamera()
+	{
+		Debug.Log($"Enabling VR Camera");
+		xrOrigin.transform.position = cam.transform.position; // Set the XR Origin's position to the Desktop Camera's position.
+		xrOrigin.gameObject.SetActive(true); // Enable the XR Origin.
+		cam.gameObject.SetActive(false); // Disable the Desktop Camera.
 	}
 	#endregion
 }
